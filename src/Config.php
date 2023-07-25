@@ -19,7 +19,7 @@ class Config
             if (cfg('redis.prefix')) {
                 self::$conf['prefix'] = cfg('redis.prefix');
             } elseif (cfg('app_name') && cfg('app_env')) {
-                self::$conf['prefix'] = cfg('app_name') . ':' . cfg('app_env');
+                self::$conf['prefix'] = cfg('app_name') . ':' . cfg('app_env') . ':';
             }
         } elseif (defined("REDIS_CONNECTION")) {
             self::$conf['host'] = REDIS_CONNECTION['host'];
